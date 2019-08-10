@@ -23,7 +23,7 @@ class DOCXFormulasExtractor{
 			}
 			$zip_handle->close();
 		}else{
-		$output_text .="";
+			$output_text .="";
 		}
 		return $output_text;
 	}
@@ -43,7 +43,7 @@ class DOCXFormulasExtractor{
 					if ($nodes->item($i)->tagName == 'm:oMathPara' || $nodes->item($i)->tagName == '"m:oMath')
 					{
 						$doc = new DomDocument;
-                        $doc->appendChild($doc->importNode($nodes->item($i), true));
+						$doc->appendChild($doc->importNode($nodes->item($i), true));
 						$xsl_doc = new DOMDocument();
 						$xsl_doc->load("rules.xsl");
 						$proc = new XSLTProcessor();
